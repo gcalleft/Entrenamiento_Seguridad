@@ -110,7 +110,7 @@ Con el fin de ejecutar la aplicación de una forma simple, se tienen tres opcion
 
 **OnCreate machine**: Se debe ejecutar una sola vez después de crear el nuevo espacio de trabajo con el archivo de configuración del paso 8, este opción toma aproximadamente 10 min.
 
-**OnRestart Snapshot**: Se debe ejecutar cada vez que se inicia el espacio de trabajo, esto puede darse al iniciar una nueva sesión de trabajo, debido a la pausa del espacio de trabajo al superarse el timeout de a plataforma, o incluso tras algún bloqueo de la misma.
+**OnRestart Snapshot**: Se debe ejecutar cada vez que se inicia el espacio de trabajo, esto puede darse al iniciar una nueva sesión de trabajo, debido a la pausa del espacio de trabajo al superarse el timeout de a plataforma, o incluso tras algún bloqueo de la misma, este proceso toma aproximadamente 5 min.
 
 **juiceshop run**: Se debe ejecutar cada vez que se altere el código de la aplicación.
 
@@ -118,4 +118,17 @@ Con el fin de ejecutar la aplicación de una forma simple, se tienen tres opcion
 
 
 
+**Ejecución de la aplicación vulnerable intencionalmente**
+
+1. Si el espacio de trabajo es nuevo ejecute la opción `OnCreate machine`, de lo contrario ejecute la opción `OnRestart Snapshot`
+
+2. Espere hasta que el proceso termine, al finalizar en la consola de ejecución debe aparecer la palabra **finish**
+
+3. Ejecute la opción `juiceshop run`
+
+4. Visualizar la aplicación haciendo clic en el botón **previews** ubicando en la parte superior derecha
+   ![preview app](screenshots/screenshot06.png)
+
+5. La aplicación se abrirá en una ventana adicional
+   ![juiceshop app](screenshots/screenshot07.png)
 
