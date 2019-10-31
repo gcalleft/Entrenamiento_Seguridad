@@ -160,5 +160,6 @@ Con el fin de ejecutar la aplicación de una forma simple, se tienen tres opcion
    ![preview app](screenshots/screenshot10.png)
 
 4. Para crear la base de datos e ingresar los datos iniciales, se debe ingresar al archivo `install.php`, y hacer clic en enlace `here`.
+
    ![bwapp](screenshots/screenshot11.png)
 
